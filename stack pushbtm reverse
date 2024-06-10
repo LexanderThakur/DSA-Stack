@@ -1,0 +1,17 @@
+public void pushAtBottom(int data,Stack<Integer> s){
+        if(s.isEmpty()){
+            s.push(data);
+            return;
+        }
+        int top= s.pop();
+        pushAtBottom(data,s);
+        s.push(top);
+    }
+    public void reverse(Stack<Integer> s){
+        if(s.isEmpty()){
+            return;
+        }
+        int temp= s.pop();
+        reverse(s);
+        pushAtBottom(temp,s);
+    }
